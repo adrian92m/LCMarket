@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "auto" > status
+while true
+do
+    echo "check"
+    ./s_updateserver
+    sleep 60
+done

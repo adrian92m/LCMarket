@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo -u ubuntu git fetch
+if [[ $(sudo -u ubuntu git status) == *"Your branch is behind"*  ]];
+then
+    ./s_stopserver
+    sudo -u ubuntu git pull
+    ./s_startserver
+    echo "$(date) - The server has been updated"
+fi
